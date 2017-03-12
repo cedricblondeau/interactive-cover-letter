@@ -27,6 +27,14 @@
         width: 150px;
         height: 150px;
       }
+
+      .cloud {
+        position:absolute;
+        background: url('/images/vectors/cloud.svg');
+        background-repeat: no-repeat;
+        width:100px;
+        height:50px;
+      }
     }
 
     #skyline {
