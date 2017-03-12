@@ -1,0 +1,15 @@
+#character-container {
+  position: fixed;
+  right: 10%;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+
+  #character {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: auto;
+    bottom: 0;
+  }
+}
