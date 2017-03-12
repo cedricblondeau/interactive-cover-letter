@@ -1,0 +1,4 @@
+// example @include min-ratio-breakpoint(1/2) { width:80%; }
+@mixin min-ratio-breakpoint($ratio) {
+  @media only screen and (min-aspect-ratio: $ratio) { @content; }
+}

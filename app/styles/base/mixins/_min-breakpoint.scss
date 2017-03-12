@@ -1,0 +1,4 @@
+// example @include min-breakpoint(940) { width:80%; }
+@mixin min-breakpoint($size) {
+  @media only screen and (min-width: $size + px) { @content; }
+}

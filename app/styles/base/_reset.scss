@@ -1,0 +1,23 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-family: $latoFont;
+  font-weight: 300;
+  @include rem("font-size", $regularFontSize);
+  color: #FFFFFF;
+}
+nav, article, footer {
+  display: block;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
