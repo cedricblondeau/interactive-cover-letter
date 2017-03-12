@@ -1,12 +1,14 @@
 import browserSync from 'browser-sync'
+import fs from 'fs'
 import gulp from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
 
 const $ = gulpLoadPlugins()
+const scenes = JSON.parse(fs.readFileSync('./data/github.json'))
 
 gulp.task('html', () => {
   return gulp.src('app/index.html')
-    .pipe($.template())
+    .pipe($.template({scenes: scenes}))
     .pipe(gulp.dest('.tmp'))
 })
 

@@ -35,6 +35,25 @@
     <div id="character-container">
       <img src="/images/vectors/character.svg" id="character" alt="Cédric" />
     </div>
+
+    <div id="scenes-container">
+      <% _.each(scenes, function(scene, i) { %>
+          <div class="scene section" id="scene-<%= i + 1 %>">
+            <div class="bubble" id="bubble-<%= i + 1 %>">
+                <article>
+                  <% _.each(scene, function(paragraph) { %>
+                    <p><%= paragraph %></p>
+                  <% }); %>
+                </article>
+                <div class="bubble-bottom">
+                  <div class="left"></div>
+                  <div class="arrow"></div>
+                  <div class="right"></div>
+                </div>
+            </div>
+          </div>
+      <% }); %>
+    </div>
   </main>
 
   <footer>
