@@ -53,6 +53,43 @@
     background: #2b9bcc;
     width: 100%;
     height: 20%;
+
+    #waves {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      $wavesCount: 10;
+      .wave {
+        position: absolute;
+        width: percentage((25 / $wavesCount) / 100);
+        height: auto;
+
+        $wavesSliceSize: 100 / $wavesCount;
+        @for $i from 1 through $wavesCount {
+          $leftPosition: (($i - 1) * ($wavesSliceSize)) + ((random(100) * $wavesSliceSize) / 100);
+          &:nth-child(#{$i}) {
+            left: percentage($leftPosition / 100);
+            top: percentage(random(75) / 100);
+          }
+        }
+      }
+    }
+
+    #ships {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      .ship {
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        background: url('/images/vectors/ship.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
   }
 
   #overlay {

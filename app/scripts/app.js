@@ -1,6 +1,7 @@
 var CoverLetter = {
   settings: {
-    clouds: 3
+    clouds: 3,
+    ships: 2
   },
 
   init: function() {
@@ -9,6 +10,11 @@ var CoverLetter = {
 
   emitBackgroundElements: function() {
     this.emitMovingElements($('#clouds'), 'cloud', this.settings.clouds);
+    this.emitMovingElements($('#ships'), 'ship', this.settings.ships, {
+      speed: 120,
+      minTopPosition: -30,
+      maxTopPosition: 20
+    });
   },
 
   emitMovingElements: function(container, elementClass, count, params) {
