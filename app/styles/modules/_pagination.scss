@@ -1,0 +1,49 @@
+nav#pagination {
+  position: fixed;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: outside none none;
+
+    li {
+      position: relative;
+      display: block;
+      height: 12px;
+      width: 12px;
+      margin: 10px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        position: relative;
+        top: 4px; // (12 / 2) - (4 / 2)
+        display: block;
+        margin: auto;
+        background: #FFFFFF;
+        border-radius: 50%;
+        height: 4px;
+        width: 4px;
+        transition: all 0.1s ease-in-out 0s;
+      }
+
+      &.active {
+        span {
+          top: 0;
+          border-radius: 50%;
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
+  }
+}

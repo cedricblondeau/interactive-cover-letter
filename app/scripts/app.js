@@ -1,14 +1,18 @@
 var CoverLetter = {
   settings: {
-    stars: 50,
+    assistScrolling: false,
     clouds: 3,
-    ships: 2
+    ships: 3,
+    stars: 50
   },
 
   init: function() {
     this.emitBackgroundElements();
     this.scenesCount = $('#scenes-container .scene').length;
     this.enableScrollMagic();
+    if (this.settings.assistScrolling) {
+      this.scrollify();
+    }
   },
 
   emitBackgroundElements: function() {
@@ -107,9 +111,38 @@ var CoverLetter = {
         .setTween(new TimelineMax().to("#bubble-"+i, 1, {opacity: 1}).to("#bubble-"+i, 1, {opacity: 0}))
         .addTo(scrollController);
     }
+  },
+
+  scrollify: function() {
+    $.scrollify({
+      section : ".scene",
+      scrollSpeed: 800,
+      offset : 10,
+      scrollbars: true,
+      overflowScroll: true,
+      easing: "easeInCubic",
+      before: function(i, panels) {
+        $(".pagination-marker").removeClass("active");
+        $("#pagination-marker-" + (i + 1)).addClass("active");
+      },
+      afterRender: function() {
+        var pagination = "<nav id=\"pagination\"><ul>";
+        var activeClass = "";
+        $(".scene").each(function(i) {
+          activeClass = "";
+          if (i === 0) {
+            activeClass = "active";
+          }
+          pagination += "<li class=\"pagination-marker " + activeClass + "\" id=\"pagination-marker-" + (i + 1) + "\">\<span></span></li>";
+        });
+        pagination += "</ul></nav>";
+        $("body").append(pagination);
+      }
+    });
   }
 };
 
 $(document).ready(function() {
+  CoverLetter.settings.assistScrolling = true;
   CoverLetter.init();
 });
