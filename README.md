@@ -8,7 +8,7 @@
 
 ## Live demo
 
-http://cedricblondeau.github.io/interactive-cover-letter/
+https://cedricblondeau.github.io/interactive-cover-letter/
 
 ## Development
 
