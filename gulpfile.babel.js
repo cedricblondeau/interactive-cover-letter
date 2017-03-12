@@ -18,12 +18,22 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
 })
 
-gulp.task('serve', ['html', 'styles'], () => {
+gulp.task('images', function () {
+  return gulp.src('app/images/**/*')
+    .pipe($.imagemin({
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest('.tmp/images'))
+})
+
+gulp.task('serve', ['html', 'styles', 'images'], () => {
   browserSync({
     server: ['.tmp', 'app'],
     port: 3000
   })
 
   gulp.watch(['app/index.html'], ['html', browserSync.reload])
+  gulp.watch(['app/images/**/*'], ['images', browserSync.reload])
   gulp.watch(['app/styles/**/*.scss'], ['styles', browserSync.reload])
 })
