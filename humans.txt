@@ -1,0 +1,12 @@
+/* AUTHOR */
+
+  Cedric Blondeau
+  https://www.cedricblondeau.com/
+  
+/* THANKS */
+
+	freepik.com
+
+/* TECHNOLOGY STACK */
+
+  html5, css3, js, jquery, velocity, gsap, scrollmagic, scrollify
