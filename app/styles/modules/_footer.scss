@@ -1,0 +1,14 @@
+footer {
+  position: fixed;
+  bottom: 1%;
+  left: 1%;
+  max-width: 35%;
+
+  p {
+    @include rem("font-size", $smallFontSize);
+    @include rem("margin-bottom", $smallFontSize / 2);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
