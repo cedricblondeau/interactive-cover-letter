@@ -1,0 +1,96 @@
+#scenes-container {
+  position: relative;
+  height: auto;
+  padding-bottom: 1px;
+}
+
+.scene {
+  height: 100vh;
+  width: 100%;
+
+  .bubble {
+    position: fixed;
+    left: 10%;
+    bottom: 50%;
+    width: 80%;
+    height: auto;
+    max-height: calc(50% - 10px);
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @include min-ratio-breakpoint($characterMinRatio) {
+      border-bottom: none;
+    }
+
+    article {
+      position: relative;
+
+      p {
+        font-size: 4.5vmin;
+        margin-top: 2.5vmin;
+        margin-bottom: 2.5vmin;
+        line-height: 1.3;
+      }
+    }
+
+    .bubble-bottom {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background: transparent;
+
+      @include min-ratio-breakpoint($characterMinRatio) {
+        display: block;
+      }
+
+      .left {
+        position: absolute;
+        left: 0;
+        background: #FFFFFF;
+        width: calc(85% - (50vh * #{$characterRatio}));
+        height: 100%;
+      }
+      .arrow {
+        position: absolute;
+        background: transparent;
+        width: 10%;
+        height: 100%;
+        left: calc(85% - (50vh * #{$characterRatio}));
+      }
+      .arrow::before {
+          content: "";
+          border-bottom-left-radius: 1vh * 100;
+          border-color: #FFFFFF;
+          border-style: solid;
+          border-width: 0 0 2px 2px;
+          height: 10vw;
+          width: 150%;
+          position: absolute;
+          left: 0;
+          bottom: -10vw;
+      }
+      .arrow::after {
+          content: "";
+          border-bottom-left-radius: 1vh * 100;
+          border-color: #FFFFFF;
+          border-style: solid;
+          border-width: 0 0 2px 2px;
+          height: 10vw;
+          width: 50%;
+          position: absolute;
+          left: 100%;
+          bottom: -10vw;
+      }
+      .right {
+        position: absolute;
+        right: 0;
+        background: #FFFFFF;
+        width: calc(5% + (50vh * #{$characterRatio}));
+        height: 100%;
+      }
+    }
+  }
+}
