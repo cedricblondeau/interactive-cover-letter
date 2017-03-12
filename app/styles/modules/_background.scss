@@ -1,3 +1,59 @@
-body {
-  background: blue;
+#background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  transform: scale(1.03);
+
+  #horizon {
+    position: relative;
+    background: #6cb8f1;
+    width: 100%;
+    height: 80%;
+
+    #sky {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      #sun {
+        position: absolute;
+        bottom: 10%;
+        right: 0%;
+        background: #ecbe68;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    #skyline {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      height: 80%;
+      width: 100%;
+      fill: #222222;
+    }
+  }
+
+  #water {
+    position: relative;
+    top: 0;
+    background: #2b9bcc;
+    width: 100%;
+    height: 20%;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #333;
+    opacity: 0.5;
+  }
 }
