@@ -1,10 +1,11 @@
 [
     [
         "Hello GitHub!",
-        "My name is Cédric Blondeau. I'm a software engineer living in Toronto, ON.",
-        "This is a demo of the interactive cover letter that I crafted and used to find my new job in Toronto, ON"
+        "This is a demo of the interactive cover letter that I crafted and used to find my new job.",
+        "Please scroll down or press &darr; to continue."
     ],
     [
+        "My name is Cédric Blondeau. I'm a software engineer living in Toronto, ON.",
         "I thought it would have been boring to send over a regular cover letter. So I decided to craft this small web app to introduce myself."
     ],
     [
